@@ -12,7 +12,7 @@ jobs:
     strategy:
       matrix:
         build_env:
-          - tag: "SNAPSHOT"
+          - tag: "85f01288514feec9e9e108fc7c4d7052028aa686"
             pkgarch: aarch64_cortex-a53
             target: mediatek
             subtarget: filogic
@@ -22,7 +22,7 @@ jobs:
       - uses: actions/checkout@v4
         with:
           repository: openwrt/openwrt
-          ref: v${{ matrix.build_env.tag }}
+          ref: ${{ matrix.build_env.tag }}
           fetch-depth: 0
 
       - name: Cache Tools and Kernel
